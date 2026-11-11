@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="estilos.css">
+
+
+    <header>
+        <h1>GYMFIT</h1>
+        <p>Sistema de gestión de gimnasio</p>
+    </header>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#socios">Socios</a>
+        <a href="#planes">Planes</a>
+        <a href="#entrenadores">Entrenadores</a>
+        <a href="#inscripciones">Inscripciones</a>
+    </nav>
+
+    <main>
+        
+<section id="dashboard">
+    <h2>Panel de Control</h2>
+
+    <div class="estadisticas">
+        
+<article class="estadistica">
+    <h3>Ingresos mensuales estimados</h3>
+    <p id="ingresosTotales">$0</p>
+</article>
+
+
+        <article class="estadistica">
+            <h3>Total de socios</h3>
+            <p id="totalSocios">0</p>
+        </article>
+
+        <article class="estadistica">
+            <h3>Inscripciones</h3>
+            <p id="totalInscripciones">0</p>
+        </article>
+
+        <article class="estadistica">
+            <h3>Plan más elegido</h3>
+            <p id="planPopular">Sin datos</p>
+        </article>
+
+    </div>
+</section>
+
+
+
+        <section id="inicio">
+            <h2>Bienvenido a GymFit</h2>
+            <p>Administrá los socios, planes, entrenadores e inscripciones del gimnasio.</p>
+        </section>
+
+        <section id="socios">
+            <h2>Socios</h2>
+
+            <form id="formSocio">
+                <input type="text" id="nombre" placeholder="Nombre" required>
+                <input type="text" id="apellido" placeholder="Apellido" required>
+                <input type="text" id="dni" placeholder="DNI" required>
+                <button type="submit">Agregar socio</button>
+            </form>
+<input
+    type="text"
+    id="buscarSocio"
+    placeholder="Buscar socio por nombre, apellido o DNI..."
+>
+            <ul id="listaSocios"></ul>
+        </section>
+
+        <section id="planes">
+            
+<section id="planes">
+   <section id="planes">
+    <h2>Nuestros Planes</h2>
+
+    <div class="tarjetas">
+
+        <article class="tarjeta">
+            <h3>Plan Básico</h3>
+            <p>Acceso al gimnasio.</p>
+            <h2>$15.000 / mes</h2>
+            <button type="button" class="elegir-plan" data-plan="Básico">
+                Elegir plan
+            </button>
+        </article>
+
+        <article class="tarjeta">
+            <h3>Plan Premium</h3>
+            <p>Acceso al gimnasio y actividades.</p>
+            <h2>$25.000 / mes</h2>
+            <button type="button" class="elegir-plan" data-plan="Premium">
+                Elegir plan
+            </button>
+        </article>
+
+        <article class="tarjeta">
+            <h3>Plan Completo</h3>
+            <p>Acceso completo y entrenamiento personalizado.</p>
+            <h2>$35.000 / mes</h2>
+            <button type="button" class="elegir-plan" data-plan="Completo">
+                Elegir plan
+            </button>
+        </article>
+
+    </div>
+</section>
+    Elegir plan
+</button>
+        </article>
+
+    </div>
+</section>
+        </section>
+
+        <section id="inscripciones">
+            
+<section id="inscripciones">
+    <h2>Inscripciones</h2>
+ 
+<form id="formInscripcion">
+
+    <select id="socioInscripcion" required>
+        <option value="">Seleccionar socio</option>
+    </select>
+
+    <select id="planInscripcion" required>
+        <option value="">Seleccionar plan</option>
+        <option value="13">Plan Básico</option>
+        <option value="14">Plan Premium</option>
+        <option value="15">Plan Completo</option>
+    </select>
+
+    <button type="submit">Inscribir socio</button>
+
+</form>
+
+
+    <ul id="listaInscripciones"></ul>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
