@@ -1,5 +1,6 @@
 
 require("dotenv").config();
+console.log("Neon configurado:", process.env.DATABASE_URL?.startsWith("postgresql://"));
 
 const express = require("express");
 const cors = require("cors");
@@ -11,11 +12,10 @@ app.use(cors());
 app.use(express.json());
 
 const db = new Pool({
-    host: process.env.DB_HOST,
-    port: Number(process.env.DB_PORT),
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 // PROBAR CONEXIÓN
@@ -203,7 +203,10 @@ app.delete("/api/inscripciones/:id", async (req, res) => {
     }
 });
 
-app.listen(3000, () => {
-    console.log("Servidor GymFit funcionando en http://localhost:3000");
-});
+app.use(express.static(__dirname));
 
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log("Servidor GymFit funcionando en el puerto " + PORT);
+});

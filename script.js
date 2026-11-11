@@ -17,7 +17,7 @@ const socioInscripcion = document.getElementById("socioInscripcion");
 // CARGAR SOCIOS EN EL SELECTOR
 async function cargarSociosEnSelector() {
     try {
-        const respuesta = await fetch("http://localhost:3000/api/socios");
+        const respuesta = await fetch("/api/socios");
 
         if (!respuesta.ok) {
             throw new Error("No se pudieron cargar los socios");
@@ -85,7 +85,7 @@ async function mostrarSocios() {
 
             try {
                 const respuesta = await fetch(
-                    "http://localhost:3000/api/socios/" + socio.id_socio,
+                    "/api/socios/" + socio.id_socio,
                     {
                         method: "PUT",
                         headers: {
@@ -123,7 +123,7 @@ async function mostrarSocios() {
 
             try {
                 const respuesta = await fetch(
-                    "http://localhost:3000/api/socios/" + socio.id_socio,
+                    "/api/socios/" + socio.id_socio,
                     { method: "DELETE" }
                 );
 
@@ -174,7 +174,7 @@ formulario.addEventListener("submit", async function(event) {
     }
 
     try {
-        const respuesta = await fetch("http://localhost:3000/api/socios", {
+        const respuesta = await fetch("/api/socios", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -214,7 +214,7 @@ function guardarInscripciones() {
 // CARGAR INSCRIPCIONES DESDE POSTGRESQL
 async function cargarInscripcionesDesdeBD() {
     try {
-        const respuesta = await fetch("http://localhost:3000/api/inscripciones");
+        const respuesta = await fetch("/api/inscripciones");
 
         if (!respuesta.ok) {
             throw new Error("No se pudieron cargar las inscripciones");
@@ -256,7 +256,7 @@ function mostrarInscripciones() {
 
             try {
                 const respuesta = await fetch(
-                    "http://localhost:3000/api/inscripciones/" + inscripcion.id_inscripcion,
+                    "/api/inscripciones/" + inscripcion.id_inscripcion,
                     { method: "DELETE" }
                 );
 
@@ -308,7 +308,7 @@ formularioInscripcion.addEventListener("submit", async function(event) {
     }
 
     try {
-        const respuesta = await fetch("http://localhost:3000/api/inscripciones", {
+        const respuesta = await fetch("/api/inscripciones", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -386,7 +386,7 @@ function actualizarDashboard() {
 // CARGAR SOCIOS DESDE POSTGRESQL
 async function cargarSociosDesdeBD() {
     try {
-        const respuesta = await fetch("http://localhost:3000/api/socios");
+        const respuesta = await fetch("/api/socios");
 
         if (!respuesta.ok) {
             throw new Error("No se pudieron cargar los socios");
